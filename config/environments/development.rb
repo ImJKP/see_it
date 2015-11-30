@@ -1,5 +1,7 @@
 Rails.application.configure do
   
+  config.web_console.whitelisted_ips = '107.132.136.101'
+  
   Rails.application.routes.default_url_options[:host] = 'http://localhost:3000'
   
   # Settings specified here will take precedence over those in config/application.rb.

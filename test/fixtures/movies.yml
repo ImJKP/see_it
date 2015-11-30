@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  themoviedb_id: 
+  original_language: 
+  overview: 
+  release_date: 
+  poster_path: MyString
+
+two:
+  title: 
+  themoviedb_id: 
+  original_language: 
+  overview: 
+  release_date: 
+  poster_path: MyString
