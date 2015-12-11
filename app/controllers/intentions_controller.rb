@@ -1,15 +1,19 @@
 class IntentionsController < ApplicationController
 
-  def create 
-    unless Intention.exists?(user_id: current_user, movie_id: params[:movie_id])
-      Intention.create(user_id: current_user, movie_id: params[:movie_id]
+  def create
+    intention = Intention.where(:user_id => params[:user_id], :movie_id => params[:movie_id])
+    unless intention.exists?
+      Intention.create(:user_id => params[:user_id], :movie_id => params[:movie_id])
     end
+    redirect_to movie_path(params[:movie_id])
   end
-  
+
   def destroy
-    if Intention.exists?(user_id: current_user, movie_id: params[:movie_id])
-      Intention.where(user_id: current_user, movie_id: params[:movie_id]).delete
+    intention = Intention.where(user_id: params[:user_id], movie_id: params[:movie_id]).first
+    if intention
+      Intention.delete(intention.id)
     end
+    redirect_to movie_path(params[:movie_id])
   end
 
 private

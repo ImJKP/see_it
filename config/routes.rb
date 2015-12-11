@@ -6,9 +6,15 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  resources :movies, only: [:index, :show]
-  resources :intentions, only: [:create, :destroy]
+  resources :movies, only: [:index, :show] do
+    post "/intentions" => "intentions#create"
+    get "/intentions" => "intentions#users_want_to_see_movie"
+    delete "/intentions" => "intentions#destroy"
+  end
+
   resources :users, only: [:show]
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

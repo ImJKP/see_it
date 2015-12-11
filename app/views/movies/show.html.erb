@@ -1,2 +1,10 @@
 <h1><%= @movie.title %></h1>
 <strong>Release date:</strong> <%= @movie.release_date %>
+
+<% unless Intention.where(:user_id => current_user.id, :movie_id => @movie.id).exists? %>
+<h2>Want to see this movie?</h2>
+<p><%= link_to "Add Movie", movie_intentions_path(:user_id => current_user.id, :movie_id => @movie.id), method:"POST" %></p>
+<% else %>
+<p>You already want to see this movie.</p>
+<p><%= link_to "Remove Movie", movie_intentions_path(:user_id => current_user.id, :movie_id => @movie.id), method: "DELETE" %>
+<% end %>
