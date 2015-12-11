@@ -1,0 +1,9 @@
+<h1>Home</h1>
+<p>Hello.</p>
+
+<% if current_user %>
+<h2>You're logged in!</h2>
+
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<% end %>

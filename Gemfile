@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'figaro'
 gem 'typhoeus'
+gem 'whenever'
 
-#For Bootstrap tooltips support 
+#For Bootstrap tooltips support
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

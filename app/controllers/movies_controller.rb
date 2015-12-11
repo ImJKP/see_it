@@ -6,7 +6,7 @@ before_action :authenticate_user!
     @movies = Movie.where(release_date: (Date.today-7..Date.today+7))
     render "index"
   end
-  
+
   def show
     @movie = Movie.find(params[:id])
     render "show"

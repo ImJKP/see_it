@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  
-  
-  devise_for :users
-  
-  root to: "home#show"
-  resource :home, only: [:show]
+
+
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  root to: "pages#home"
+
   resources :movies, only: [:index, :show]
   resources :intentions, only: [:create, :destroy]
   resources :users, only: [:show]
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
