@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20151130020110) do
     t.string   "uid"
     t.string   "friends"
     t.string   "image"
+    t.string   "facebook_token"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

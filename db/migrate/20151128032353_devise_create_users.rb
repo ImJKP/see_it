@@ -36,6 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :uid
       t.string :friends
       t.string :image
+      t.string :facebook_token
 
       t.timestamps null: false
     end
