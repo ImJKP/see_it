@@ -1,0 +1,10 @@
+<%= image_tag(@user.image, class: "user_image") %>
+<h1><%= @user.id %></h1>
+<h2>Upcoming Movies I Want to See</h2>
+
+<% if @movies.empty? %>
+<p>This person hasn't picked any movies to see yet.<p>
+<% end %>
+<% @movies.each do |movie| %>
+  <p><%= link_to movie.title, movie_path(movie) %></p>
+<% end %>

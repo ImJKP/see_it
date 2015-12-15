@@ -3,7 +3,7 @@
 Devise.setup do |config|
 
 
-  config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_secret"], :scope => 'public_profile,email,user_friends,user_location', :info_fields => 'email,friends,first_name,last_name,user_location'
+  config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_secret"], :scope => 'public_profile,email,user_friends', :info_fields => 'email,friends,name,first_name,last_name', :image_size => 'large'
 
 
   # The secret key used by Devise. Devise uses this key to generate

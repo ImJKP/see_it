@@ -8,3 +8,15 @@
 <p>You already want to see this movie.</p>
 <p><%= link_to "Remove Movie", movie_intentions_path(:user_id => current_user.id, :movie_id => @movie.id), method: "DELETE" %>
 <% end %>
+
+<h2>Friends</h2>
+<% if @users.empty? %>
+  <p>No friends to see this movie yet.</p>
+<% else %>
+  <% @users.each do |user| %>
+    <div style="display:block,width:100%">
+      <%= image_tag(user.image, class: "user_image") %>
+      <%= link_to user.full_name, user_path(user) %>
+    </div>
+  <% end %>
+<% end %>
