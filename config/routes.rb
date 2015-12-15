@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show] do
     post "/intentions" => "intentions#create"
-    get "/intentions" => "intentions#users_want_to_see_movie"
     delete "/intentions" => "intentions#destroy"
   end
 
   resources :users, only: [:show]
+  get '/friends' => "users#friends"
 
 
 

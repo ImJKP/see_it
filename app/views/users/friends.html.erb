@@ -1,0 +1,9 @@
+<h1>My Friends</h1>
+<p><%= pluralize(@friends.count, 'friend') %> are using See It.</p>
+<p>Check out what movies they want to see:</p>
+<% @friends.each do |friend| %>
+  <div class="user-block">
+    <%= image_tag(friend.image, class: "user-image") %>
+    <%= link_to friend.full_name, user_path(friend) %>
+  </div>
+<% end %>

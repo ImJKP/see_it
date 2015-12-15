@@ -11,4 +11,11 @@ class UsersController < ApplicationController
     render "show"
   end
 
+before_action :authenticate_user!
+
+  def friends
+    @friends = User.where(uid: current_user.friends)
+    render "friends"
+  end
+
 end

@@ -1,5 +1,5 @@
 <%= image_tag(@user.image, class: "user_image") %>
-<h1><%= @user.id %></h1>
+<h1><%= @user.full_name %></h1>
 <h2>Upcoming Movies I Want to See</h2>
 
 <% if @movies.empty? %>

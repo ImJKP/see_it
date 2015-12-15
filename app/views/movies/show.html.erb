@@ -14,8 +14,8 @@
   <p>No friends to see this movie yet.</p>
 <% else %>
   <% @users.each do |user| %>
-    <div style="display:block,width:100%">
-      <%= image_tag(user.image, class: "user_image") %>
+    <div class="user-block">
+      <%= image_tag(user.image, class: "user-image") %>
       <%= link_to user.full_name, user_path(user) %>
     </div>
   <% end %>

@@ -2,7 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user_image {
+.user-block {
+  display: block;
+  width: 100%;
+}
+
+.user-image {
   padding: 10px;
   max-height: 100px;
 }
