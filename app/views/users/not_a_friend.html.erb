@@ -1,0 +1,4 @@
+<h1><%= @user.full_name %></h1>
+<p>Sorry, it looks like <%= @user.first_name %> isn't your friend on Facebook.</p>
+
+<p>If you and <%= @user.first_name %> recently became Facebook friends, please <%= link_to "log out", destroy_user_session_path, method:'DELETE' %> of See It and then log back in again.</p>
